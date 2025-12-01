@@ -1,0 +1,26 @@
+# ========================================
+# Dockerfile para Backend (Node.js/Express)
+# ========================================
+
+FROM node:20-alpine
+
+# Directorio de trabajo
+WORKDIR /usr/src/app
+
+# Copiar archivos de dependencias
+COPY package*.json ./
+
+# Instalar dependencias de producción
+RUN npm ci --only=production
+
+# Copiar código fuente
+COPY . .
+
+# Crear directorio para uploads
+RUN mkdir -p uploads
+
+# Puerto expuesto
+EXPOSE 3020
+
+# Comando de inicio
+CMD ["npm", "start"]
