@@ -20,7 +20,7 @@ COPY . .
 RUN mkdir -p uploads
 
 # Puerto expuesto
-EXPOSE 3020
+EXPOSE 8090
 
 # Comando de inicio
 CMD ["npm", "start"]
