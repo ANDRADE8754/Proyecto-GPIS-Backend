@@ -19,8 +19,8 @@ COPY . .
 # Crear directorio para uploads
 RUN mkdir -p uploads
 
-# Puerto expuesto
-EXPOSE 8090
+# Puerto del backend (actualizado)
+EXPOSE 3025
 
 # Comando de inicio
 CMD ["npm", "start"]
